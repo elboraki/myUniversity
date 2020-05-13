@@ -1,0 +1,40 @@
+<% if @student.errors.any? %>
+  <%=pluralize(@student.errors.count,"error") %>
+  <ul>
+  <% @student.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+ 
+<% end %>
+
+<div class="container">
+    <div class="row center sign-up-form">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h3 class="center-align">Sign up !</h3>
+                <div class="row">
+                        <%= form_for(@student,html:{class: "col s12"}) do |f| %>
+                    <div class="row">
+                        <div class="input-field col s12">
+                             <%= f.text_field :name ,placeholder:"Enter your name"%>
+                             <%= f.label :name %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                             <%= f.email_field :email ,placeholder:"enter your email"%>
+                             <%= f.label :email %>
+                        </div>
+                    </div>
+
+                    <%= f.submit "submit",class:"waves-effect waves-light blue btn" %>
+ 
+                <% end %>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
