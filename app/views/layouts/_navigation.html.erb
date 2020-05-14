@@ -30,5 +30,22 @@
         <li><a href="#">Courses</a></li>
         <li><a href="#">Enrollement</a></li>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
+    </ul>
+    <div class="container">
+        <div class="row center sign-up-form">
+            <div class="col s12 m12 l12">
+                <% flash.each do |key,msg| %>
+                <div class="card-panel blue lighten-2 left-align" id="fade-out-target">
+                    <span class="white-text">
+                        
+                            <ul>
+                                <li><%= msg %></li>
+                            </ul>
+                      
+                    </span>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
  </header>
