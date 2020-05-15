@@ -9,6 +9,14 @@
         <div class="card-content white-text">
           <span class="card-title">Name:<%= @student.name %></span>
           <p>Email: <%= @student.email %></p>
+          <p>
+            <span>Course enrollement:</span>
+            <ul>
+              <% @student.courses.each do |course| %>
+                  <li><%= course.name %></li>
+              <% end %>
+            </ul>
+          </p>
         </div>
         <div class="card-action">
           <%= link_to edit_student_path(@student) ,class:"waves-effect waves-light  grey darken-2 btn"  do %>

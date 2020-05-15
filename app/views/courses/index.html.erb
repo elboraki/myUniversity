@@ -5,18 +5,25 @@
 </div>
 
 <div class="row">
-  <% @courses.all.each  do  |course| %>
-       <div class="col s12 m4">
-      <div class="card orange darken-4">
-        <div class="card-content white-text">
-          <span class="card-title"><%=course.short_name %> <%=course.name %></span>
-          <p><%=course.description %></p>
-        </div>
-        <div class="card-action">
-          <a href="#">Enroll</a>
-          <a href="#">Details</a>
-        </div>
-      </div>
+   
+    
+      <% @courses.all.each  do  |course| %>
+        <div class="col s12 m6">
+          <div class="card orange darken-4">
+              <div class="card-content white-text">
+                <span class="card-title"><%=course.short_name %> <%=course.name %></span>
+                <p><%=course.description %></p>
+              </div>
+              <div class="card-action">
+                <% if logged_in? && !current_user.courses.include?(course) %>
+                  <%= link_to 'Enroll', course_enroll_path(course_id: course.id),method: :post %>
+                <% end %>
+                <%= link_to 'details', course_path(course) %>
+              </div>
+            </div>
+          </div>
+          
+      <% end %>
+    
+  
     </div>
-    <% end %>
-</div>
