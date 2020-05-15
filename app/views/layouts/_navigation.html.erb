@@ -1,14 +1,21 @@
  <header>
      <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
+          <% if logged_in? %>
+          <li><%= link_to 'logout', logout_path ,method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'login', login_path %></li>
+           <li class="divider"></li>
+        <li><%= link_to 'Sign_up', new_student_path %></li>
+        <% end %>
+       
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
+        <% if logged_in? %>
+          <li><%= link_to 'logout', logout_path %></li>
+        <% else %>
+          <%= link_to 'login', login_path %>
+        <% end %>
         <li class="divider"></li>
         <li><a href="#!">three</a></li>
     </ul>

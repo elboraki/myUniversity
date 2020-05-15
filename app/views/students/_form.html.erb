@@ -10,14 +10,28 @@
                     <div class="row">
                         <div class="input-field col s12">
                              <%= f.text_field :name ,placeholder:"Enter your name"%>
-                             <%= f.label :name %>
+                             <%= f.label :name ,class:"active"%>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
                              <%= f.email_field :email ,placeholder:"enter your email"%>
-                             <%= f.label :email %>
+                             <%= f.label :email ,class:"active"%>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                             <%= f.password_field :password ,placeholder:"choose your password"%>
+                             <%= f.label :password ,class:"active"%>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                             <%= f.password_field :password_confirmation ,placeholder:"confirm your password"%>
+                             <%= f.label :password_confirmation,class:"active" %>
                         </div>
                     </div>
 
