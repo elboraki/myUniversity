@@ -5,12 +5,12 @@
 </div>
 
 <div class="row">
+  <% @courses.all.each  do  |course| %>
        <div class="col s12 m4">
       <div class="card orange darken-4">
         <div class="card-content white-text">
-          <span class="card-title">CS101 Intro to Computer Science</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <span class="card-title"><%=course.short_name %> <%=course.name %></span>
+          <p><%=course.description %></p>
         </div>
         <div class="card-action">
           <a href="#">Enroll</a>
@@ -18,4 +18,5 @@
         </div>
       </div>
     </div>
+    <% end %>
 </div>
